@@ -5,7 +5,6 @@
 
 <% @tweets.each do |tweets| %>
 	<p>
-		<%= link_to(tweet.text, tweet) %>
-		<%= edit_tweet_link(tweet) %>
+		<%= link_to(@tweet.text, tweets) %>
 	</p>
 <% end %>
