@@ -1,0 +1,11 @@
+<h1>All Tweets</h1>
+<p><%= link_to('Create a Tweet', new_blog_url) %></p>
+
+<p>There are <%= @blogs.count %> blogs.</p>
+
+<% @blogs.each do |blog| %>
+	<p>
+		<%= link_to(blog.text_and_author, blog) %>
+		<%= edit_blog_link(blog) %>
+	</p>
+<% end %>
