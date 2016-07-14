@@ -3,8 +3,10 @@
 
 <p>There are <%= @tweets.count %> tweets.</p>
 
-<% @tweets.each do |tweets| %>
+<% @tweets.each do |tweet| %>
 	<p>
-		<%= link_to(@tweet.text, tweets) %>
+		<%= link_to(tweet.text, tweet) %>
+	
+		<%= link_to('Edit', edit_tweet_url(tweet)) %>
 	</p>
 <% end %>

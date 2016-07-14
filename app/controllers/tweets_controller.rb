@@ -12,7 +12,7 @@ class TweetsController < ApplicationController
 	end
 
 	def create
-		@tweet = Tweet.create
+		@tweet = Tweet.create((tweet_params).permit(:text))
 		redirect_to(@tweet)
 	end
 
@@ -22,7 +22,7 @@ class TweetsController < ApplicationController
 
 	def update
 		find_tweet
-		@tweet.update(tweet_params)
+		@tweet.update((tweet_params).permit(:text))
 		redirect_to(@tweet)
 	end
 
